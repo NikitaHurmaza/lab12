@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+  <link th:rel="stylesheet" type="text/css" th:href="style.css">
+</head>
+<body>
+<h1 th:text="|Tabulation results|"></h1>
+<div class="position">
+  <div class="left">
+<table class="table table-striped">
+  <thead class="table-dark">
+  <tr>
+    <th class="text-center">x</th>
+    <th class="text-center">y</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="p: ${points}">
+    <td th:text="${p.x()}"></td>
+    <td th:text="${p.y()}"></td>
+  </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+<div class="right">
+<p th:text="'The maximum y value is: ' + ${maxYNumber}"></p>
+<p th:text="'The maximum y index is: ' + ${maxYIndex}"></p>
+<p th:text="'The maximum x value is: ' + ${maxNumber}"></p>
+<p th:text="'The minimum y value is: ' + ${minYNumber}"></p>
+<p th:text="'The minimum y index is: ' + ${minYIndex}"></p>
+<p th:text="'The minimum x value is: ' + ${minNumber}"></p>
+<p th:text="'Sum is: ' + ${sum}"></p>
+<p th:text="'Average is: ' + ${average}"></p>
+</div>
+<script th:src="@{/webjars/jquery/3.6.3/juery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/5.2.3/bootstrap.min.js}"></script>
+</body>
+</html>

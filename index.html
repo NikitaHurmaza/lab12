@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Start page</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <link th:rel="stylesheet" type="text/css" th:href="style.css">
+</head>
+<body>
+<h1 th:text = "|Tabulations|" ></h1>
+<form action="tabulate" method="post">
+    <label class="label" for="a" th:text="|A|"></label>
+    <input type="text" id="a" name="a"><br/>
+    <label class="label" for="begin" th:text="|Begin|"></label>
+    <input type="text" id="begin" name="begin"><br/>
+    <label class="label"  for="end" th:text="|End|"></label>
+    <input type="text" id="end" name="end"><br/>
+    <label class="label" for="step" th:text="|Step|"></label>
+    <input type="text" id="step" name="step"><br/>
+    <button type="submit" th:text="|result|" class="btn btn-outline-dark"></button>
+</form>
+<script th:src="@{/webjars/bootstrap/5.2.3/bootstrap.min.js}"></script>
+</body>
+</html>
